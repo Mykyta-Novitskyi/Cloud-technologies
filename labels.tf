@@ -6,3 +6,11 @@ module "label" {
   environment = var.environment
   delimiter   = var.delimiter
 }
+
+module "label_api" {
+  source  = "cloudposse/label/null"
+  version = "0.25.0"
+
+  name    = "api"
+  context = module.label.context
+}
